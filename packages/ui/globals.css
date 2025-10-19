@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ant Design global styles */
+.ant-btn {
+  @apply rounded-md;
+}
+
+/* Ensure Ant Design components can use Tailwind classes when needed */
+.ant-input,
+.ant-select,
+.ant-btn {
+  @apply transition-all duration-200;
+}
+
+/* Style guide: Custom styles that play well with Ant Design */
+.btn-primary {
+  @apply bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded;
+}
+
+.btn-secondary {
+  @apply bg-gray-500 hover:bg-gray-600 text-white font-medium py-2 px-4 rounded;
+}

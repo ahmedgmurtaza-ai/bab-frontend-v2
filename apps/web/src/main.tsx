@@ -1,8 +1,7 @@
-import React from "react";
 import { createRoot } from "react-dom/client";
 import "./style.css";
 import typescriptLogo from "/typescript.svg";
-import { Header, Counter } from "@repo/ui";
+import { Header, Counter, Button } from "@repo/ui";
 
 const App = () => (
   <div>
@@ -17,6 +16,7 @@ const App = () => (
       />
     </a>
     <Header title="Web" />
+    <Button size="large">helloworld</Button>
     <div className="card">
       <Counter />
     </div>
