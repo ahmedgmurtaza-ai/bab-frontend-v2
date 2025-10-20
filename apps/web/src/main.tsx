@@ -1,15 +1,12 @@
-import { createRoot } from "react-dom/client";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import Providers from "./routes";
+import "./api/interceptors"; // Import interceptors to ensure they're registered
 import "./style.css";
-import { Header, Counter, Button } from "@repo/ui";
+import "./i18n/i18n"; // Import i18next configuration
 
-const App = () => (
-  <div>
-    <Header title="Bank AlBilad FE Starter" />
-    <Button size="large">helloworld</Button>
-    <div className="card">
-      <Counter />
-    </div>
-  </div>
+ReactDOM.createRoot(document.getElementById("app")!).render(
+  <React.StrictMode>
+    <Providers />
+  </React.StrictMode>
 );
-
-createRoot(document.getElementById("app")!).render(<App />);

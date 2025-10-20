@@ -1,0 +1,20 @@
+{
+  "welcome": "Welcome to Starter App",
+  "description": "This is a simple starter app with React, TypeScript, and modern tools",
+  "button": {
+    "click": "Click me",
+    "clicked": "Clicked {{count}} times"
+  },
+  "user": {
+    "title": "User Information",
+    "name": "Name",
+    "email": "Email",
+    "fetch": "Fetch User Data"
+  },
+  "accounts": {
+    "title": "Accounts",
+    "accountNumber": "Account Number",
+    "balance": "Balance",
+    "noAccounts": "No accounts found"
+  }
+}

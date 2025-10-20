@@ -9,7 +9,7 @@ const meta = {
   },
   tags: ["autodocs"],
   argTypes: {
-    variant: {
+    type: {
       control: "select",
       options: ["default", "primary", "dashed", "link", "text"],
     },
@@ -19,16 +19,10 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const Default: Story = {
   args: {
     type: "primary",
     children: "Primary Button",
-  },
-};
-
-export const Default: Story = {
-  args: {
-    children: "Default Button",
   },
 };
 
