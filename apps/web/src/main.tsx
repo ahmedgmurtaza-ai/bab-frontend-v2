@@ -1,21 +1,10 @@
 import { createRoot } from "react-dom/client";
 import "./style.css";
-import typescriptLogo from "/typescript.svg";
 import { Header, Counter, Button } from "@repo/ui";
 
 const App = () => (
   <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" className="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img
-        src={typescriptLogo}
-        className="logo vanilla"
-        alt="TypeScript logo"
-      />
-    </a>
-    <Header title="Web" />
+    <Header title="Bank AlBilad FE Starter" />
     <Button size="large">helloworld</Button>
     <div className="card">
       <Counter />
