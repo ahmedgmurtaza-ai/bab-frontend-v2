@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface ErrorBoundaryState {
   hasError: boolean;
@@ -10,7 +10,10 @@ interface ErrorBoundaryProps {
   fallback?: React.ComponentType<{ error?: Error }>;
 }
 
-class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
+class ErrorBoundary extends React.Component<
+  ErrorBoundaryProps,
+  ErrorBoundaryState
+> {
   constructor(props: ErrorBoundaryProps) {
     super(props);
     this.state = { hasError: false };
@@ -23,7 +26,7 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
     // Log the error to an error reporting service
-    console.error('Error caught by boundary:', error, errorInfo);
+    console.error("Error caught by boundary:", error, errorInfo);
   }
 
   render() {
@@ -40,7 +43,9 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
 const DefaultFallback: React.FC<{ error?: Error }> = ({ error }) => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-red-50 p-4">
-      <h1 className="text-2xl font-bold text-red-800 mb-4">Something went wrong</h1>
+      <h1 className="text-2xl font-bold text-red-800 mb-4">
+        Something went wrong
+      </h1>
       {error && (
         <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
           <p>Error: {error.message}</p>
