@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { Input, Button } from "@repo/ui";
+import { useLogin } from "../hooks/useLogin";
 
 const LoginPage: React.FC = () => {
   const [mobile, setMobile] = useState("");
   const [crNumber, setCrNumber] = useState("");
   const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const loginMutation = useLogin();
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
     // Basic validation
@@ -18,8 +21,23 @@ const LoginPage: React.FC = () => {
       setError("Please enter a valid CR number.");
       return;
     }
-    // TODO: Connect to API
-    alert("Login successful!");
+    // Call login mutation
+    loginMutation.mutate(
+      { email: mobile, password: crNumber },
+      {
+        onSuccess: (data) => {
+          // Handle successful login (e.g., redirect, store token, etc.)
+          // For now, just clear the form
+          setMobile("");
+          setCrNumber("");
+        },
+        onError: (err: any) => {
+          setError(
+            err?.response?.data?.message || err.message || "Login failed"
+          );
+        },
+      }
+    );
   };
 
   return (
@@ -55,7 +73,12 @@ const LoginPage: React.FC = () => {
               {error}
             </div>
           )}
-          <Button type="primary" htmlType="submit" block>
+          <Button
+            type="primary"
+            htmlType="submit"
+            block
+            loading={loginMutation.isLoading}
+          >
             Login
           </Button>
         </form>
