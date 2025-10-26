@@ -34,3 +34,26 @@ use react router v7 for routing
 if you find anything unclear or incomplete instructions from me, please ask me for clarification before proceeding, don't assume always ask
 
 make sure to add some usecases for each components in stories for example for input component add events keypress, focus and others similarly for button add onClick event and others
+
+# apis
+
+all the api requests will be creatied via axios and hacndled through reactquery
+
+# pages
+
+we have created follwing pages:
+/auth :
+1 - login
+2 -register
+3 - forgot password
+3 - otp
+
+# hooks
+
+Hooks should be pure and reusable, only returning state and mutation functions.
+Components can then decide how to handle success, error, or loading states, making the UI logic clear and flexible.
+This keeps hooks generic and easy to test, and avoids hidden side effects.
+Best Practice:
+
+Let hooks like useLogin and useOtpSubmit only return mutation objects.
+Show notifications and handle navigation in the component, using the mutation's onSuccess and onError options or by watching mutation state.

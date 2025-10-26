@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Input, Button, Notification } from "@repo/ui";
-import { useLogin } from "../hooks/useLogin";
+import { useLogin } from "@/features/auth/hooks/useLogin";
 
 const LoginPage: React.FC = () => {
   const [mobile, setMobile] = useState("");

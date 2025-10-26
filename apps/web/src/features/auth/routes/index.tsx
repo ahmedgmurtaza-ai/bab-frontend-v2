@@ -2,9 +2,10 @@ import React, { lazy, Suspense } from "react";
 import { ErrorBoundary } from "../../../components/common/ErrorBoundary";
 import { RouteObject, Navigate } from "react-router-dom";
 
-const LoginPage = lazy(() => import("../pages/Login"));
+const LoginPage = lazy(() => import("../pages/login"));
 const RegisterPage = lazy(() => import("../pages/RegisterPage"));
 const ForgotPasswordPage = lazy(() => import("../pages/ForgotPasswordPage"));
+const OtpPage = lazy(() => import("../pages/Otp"));
 
 function suspenseWrapper(
   Component: React.LazyExoticComponent<React.ComponentType>
@@ -34,6 +35,10 @@ const authRoutes: RouteObject[] = [
   {
     path: "forgot-password",
     element: suspenseWrapper(ForgotPasswordPage),
+  },
+  {
+    path: "otp",
+    element: suspenseWrapper(OtpPage),
   },
 ];
 
