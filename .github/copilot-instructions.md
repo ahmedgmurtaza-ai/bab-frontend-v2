@@ -20,6 +20,14 @@ or local state use usestate and for global state use zustand store from /store
 create separate selectors for zustand store in /store/selectors for each features and modules
 use typescript for type safety but not overdo it
 create custom hooks where necessary in /hooks
+only use tailwindcss for styling and avoid css modules or styled components
+when ever i accept
+
+# Routing
+
+Routing : make keep routing clean, create new file for feature/module nested routing
+use lazy loading for all routes
+use react router v7 for routing
 
 # ask me
 
