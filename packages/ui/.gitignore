@@ -11,4 +11,4 @@ server/dist
 public/dist
 
 *.docx
-/storybook-static
+storybook-static
