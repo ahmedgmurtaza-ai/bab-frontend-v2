@@ -1,3 +1,3 @@
 // components
 export * from "./components";
-export * from "./antd-provider";
+export * from "./components/notification";

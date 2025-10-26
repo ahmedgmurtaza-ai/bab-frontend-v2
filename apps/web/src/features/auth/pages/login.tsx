@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Input, Button } from "@repo/ui";
+import { Input, Button, Notification } from "@repo/ui";
 import { useLogin } from "../hooks/useLogin";
 
 const LoginPage: React.FC = () => {
@@ -32,9 +32,14 @@ const LoginPage: React.FC = () => {
           setCrNumber("");
         },
         onError: (err: any) => {
-          setError(
-            err?.response?.data?.message || err.message || "Login failed"
-          );
+          const apiError =
+            err?.response?.data?.message || err.message || "Login failed";
+          setError(apiError);
+          Notification({
+            type: "error",
+            message: "Login Error",
+            description: apiError,
+          });
         },
       }
     );
@@ -68,11 +73,6 @@ const LoginPage: React.FC = () => {
               className="w-full"
             />
           </div>
-          {error && (
-            <div className="text-red-600 text-sm text-center font-medium">
-              {error}
-            </div>
-          )}
           <Button
             type="primary"
             htmlType="submit"
