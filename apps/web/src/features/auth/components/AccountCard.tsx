@@ -1,28 +1,23 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Account } from "../types";
-import { Button } from "@bab/design-system";
+// import { Button } from "@bab/design-system";
+// Use Button from @repo/ui if needed
 
 interface AccountCardProps {
   account: Account;
-  onDetailsClick?: (id: string) => void;
-  onTransferClick?: (id: string) => void;
 }
 
-const AccountCard: React.FC<AccountCardProps> = ({
-  account,
-  onDetailsClick,
-  onTransferClick,
-}) => {
+const AccountCard: React.FC<AccountCardProps> = ({ account }) => {
   const { t } = useTranslation();
 
-  // Format currency based on account currency
-  const formatCurrency = (amount: number, currency: string = "USD") => {
-    return new Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency: currency,
-    }).format(amount);
-  };
+  // Format currency based on account currency (not used)
+  // const formatCurrency = (amount: number, currency: string = "USD") => {
+  //   return new Intl.NumberFormat("en-US", {
+  //     style: "currency",
+  //     currency: currency,
+  //   }).format(amount);
+  // };
 
   return (
     <div className="bg-white rounded-lg shadow-md p-4 border border-gray-200 hover:shadow-lg transition-shadow">

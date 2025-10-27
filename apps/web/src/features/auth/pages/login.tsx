@@ -5,36 +5,38 @@ import { useLogin } from "@/features/auth/hooks/useLogin";
 const LoginPage: React.FC = () => {
   const [mobile, setMobile] = useState("");
   const [crNumber, setCrNumber] = useState("");
-  const [error, setError] = useState("");
+  // Remove unused error state
 
   const loginMutation = useLogin();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError("");
+    // setError("");
     // Basic validation
     if (!mobile.match(/^\d{8,15}$/)) {
-      setError("Please enter a valid mobile number.");
+      // setError("Please enter a valid mobile number.");
       return;
     }
     if (!crNumber.match(/^\d{5,15}$/)) {
-      setError("Please enter a valid CR number.");
+      // setError("Please enter a valid CR number.");
       return;
     }
     // Call login mutation
     loginMutation.mutate(
       { email: mobile, password: crNumber },
       {
-        onSuccess: (data) => {
+        onSuccess: () => {
           // Handle successful login (e.g., redirect, store token, etc.)
           // For now, just clear the form
           setMobile("");
           setCrNumber("");
         },
-        onError: (err: any) => {
-          const apiError =
-            err?.response?.data?.message || err.message || "Login failed";
-          setError(apiError);
+        onError: (err: unknown) => {
+          // Try to extract error message
+          let apiError = "Login failed";
+          if (typeof err === "object" && err !== null && "message" in err) {
+            apiError = (err as { message: string }).message;
+          }
           Notification({
             type: "error",
             message: "Login Error",
@@ -77,7 +79,7 @@ const LoginPage: React.FC = () => {
             type="primary"
             htmlType="submit"
             block
-            loading={loginMutation.isLoading}
+            loading={loginMutation.status === "pending"}
           >
             Login
           </Button>
