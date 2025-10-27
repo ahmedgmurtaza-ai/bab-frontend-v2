@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "build": "turbo run build",
+    "build": "pnpm lint && pnpm format && turbo run build",
     "dev": "turbo run dev && pnpm --filter @repo/ui run storybook",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""

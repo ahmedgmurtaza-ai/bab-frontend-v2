@@ -48,7 +48,7 @@ export const OtpPage: React.FC = () => {
             message: (error as Error)?.message || "OTP verification failed.",
           });
         },
-      }
+      },
     );
   };
 

@@ -41,7 +41,7 @@ const LoginPage: React.FC = () => {
             description: apiError,
           });
         },
-      }
+      },
     );
   };
 

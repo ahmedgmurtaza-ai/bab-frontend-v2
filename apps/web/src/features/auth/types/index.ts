@@ -6,9 +6,9 @@ export interface Account {
   accountName: string;
   balance: number;
   currency: string;
-  accountType: 'checking' | 'savings' | 'credit' | 'investment';
+  accountType: "checking" | "savings" | "credit" | "investment";
   availableBalance?: number;
-  status: 'active' | 'inactive' | 'closed';
+  status: "active" | "inactive" | "closed";
   openedDate: string; // ISO date string
 }
 
@@ -18,14 +18,14 @@ export interface Transaction {
   date: string; // ISO date string
   description: string;
   amount: number; // Positive for credits, negative for debits
-  type: 'debit' | 'credit';
+  type: "debit" | "credit";
   category: string;
   runningBalance: number;
 }
 
 export interface CreateAccountRequest {
   accountName: string;
-  accountType: 'checking' | 'savings' | 'credit' | 'investment';
+  accountType: "checking" | "savings" | "credit" | "investment";
   initialDeposit?: number;
 }
 

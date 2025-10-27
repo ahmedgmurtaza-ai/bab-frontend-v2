@@ -8,7 +8,7 @@ const ForgotPasswordPage = lazy(() => import("../pages/ForgotPasswordPage"));
 const OtpPage = lazy(() => import("../pages/Otp"));
 
 function suspenseWrapper(
-  Component: React.LazyExoticComponent<React.ComponentType>
+  Component: React.LazyExoticComponent<React.ComponentType>,
 ) {
   return (
     <ErrorBoundary>

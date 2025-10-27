@@ -1,32 +1,58 @@
-# `Turborepo` Vite starter
+design system: localhost:6006
 
-This is a community-maintained example. If you experience a problem, please submit a pull request with a fix. GitHub Issues will be closed.
+# BAB Starter Monorepo
 
-## Using this example
+## Getting Started
 
-Run the following command:
+Clone the repository and install dependencies:
 
 ```sh
-npx create-turbo@latest -e with-vite-react
+git clone <repo-url>
+cd bab-starter-app
+pnpm install
 ```
 
-## What's inside?
+To start the development servers:
 
-This Turborepo includes the following packages and apps:
+```sh
+pnpm dev
+```
+
+- App: [http://localhost:5173](http://localhost:5173)
+- Design System (Storybook): [http://localhost:6006](http://localhost:6006)
+
+---
+
+## Monorepo Structure
 
 ### Apps and Packages
 
-- `web`: react [vite](https://vitejs.dev) ts app
-- `@repo/ui`: a stub component library shared by `web` application
-- `@repo/eslint-config`: shared `eslint` configurations
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+- **web**: React + TypeScript app powered by [Vite](https://vitejs.dev)
+- **@repo/ui**: Shared component library (design system)
+- **@repo/eslint-config**: Shared ESLint configuration
+- **@repo/typescript-config**: Shared TypeScript configuration (`tsconfig.json`)
 
-Each package and app is 100% [TypeScript](https://www.typescriptlang.org/).
+All packages and apps use [TypeScript](https://www.typescriptlang.org/).
 
 ### Utilities
 
-This Turborepo has some additional tools already setup for you:
+This Turborepo comes pre-configured with:
 
 - [TypeScript](https://www.typescriptlang.org/) for static type checking
 - [ESLint](https://eslint.org/) for code linting
 - [Prettier](https://prettier.io) for code formatting
+
+---
+
+## Scripts
+
+- `pnpm dev` - Start all apps in development mode
+- `pnpm build` - Build all apps and packages
+- `pnpm lint` - Lint all packages
+- `pnpm format` - Format code with Prettier
+
+---
+
+## License
+
+MIT
