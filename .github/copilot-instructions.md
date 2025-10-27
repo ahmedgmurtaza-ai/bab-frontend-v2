@@ -62,3 +62,4 @@ Show notifications and handle navigation in the component, using the mutation's 
 
 define global theme which will be used across all components in design system
 use ant design theming capabilities to define colors, typography, spacing etc.
+theme colors we are following are: f4e5de-ffffff-d6d7da-761217-e77955
