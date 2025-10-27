@@ -8,6 +8,7 @@ import CardsPage from "../features/cards/pages/CardsPage";
 import PaymentsPage from "../features/payments/pages/PaymentsPage";
 import NotFoundPage from "../pages/NotFoundPage";
 import authRoutes from "../features/auth/routes";
+import { AntdProvider } from "@repo/ui";
 
 // Create a client for React Query
 const queryClient = new QueryClient({
@@ -53,8 +54,10 @@ const router = createBrowserRouter([
 function Providers() {
   return (
     <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-      <ReactQueryDevtools initialIsOpen={false} />
+      <AntdProvider>
+        <RouterProvider router={router} />
+        <ReactQueryDevtools initialIsOpen={false} />
+      </AntdProvider>
     </QueryClientProvider>
   );
 }

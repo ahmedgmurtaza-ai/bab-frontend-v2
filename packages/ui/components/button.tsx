@@ -3,6 +3,7 @@
 import React from "react";
 import { Button as AntButton, type ButtonProps } from "antd";
 import { LoadingOutlined } from "@ant-design/icons";
+import { AntdProvider } from "../antd-provider";
 
 export interface UIButtonProps extends ButtonProps {
   isLoading?: boolean;
@@ -16,12 +17,14 @@ export const Button: React.FC<UIButtonProps> = ({
   ...props
 }) => {
   return (
-    <AntButton
-      {...props}
-      loading={isLoading}
-      icon={icon || (isLoading ? <LoadingOutlined /> : undefined)}
-    >
-      {children}
-    </AntButton>
+    <AntdProvider>
+      <AntButton
+        {...props}
+        loading={isLoading}
+        icon={icon || (isLoading ? <LoadingOutlined /> : undefined)}
+      >
+        {children}
+      </AntButton>
+    </AntdProvider>
   );
 };
