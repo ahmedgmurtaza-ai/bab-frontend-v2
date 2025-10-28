@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Button as AntButton, type ButtonProps } from "antd";
-import { LoadingOutlined } from "@ant-design/icons";
+import { LucideClockFading } from "lucide-react";
 import { AntdProvider } from "../antd-provider";
 
 export interface UIButtonProps extends ButtonProps {
@@ -21,7 +21,7 @@ export const Button: React.FC<UIButtonProps> = ({
       <AntButton
         {...props}
         loading={isLoading}
-        icon={icon || (isLoading ? <LoadingOutlined /> : undefined)}
+        icon={icon || (isLoading ? <LucideClockFading /> : undefined)}
       >
         {children}
       </AntButton>

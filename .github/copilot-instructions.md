@@ -62,4 +62,11 @@ Show notifications and handle navigation in the component, using the mutation's 
 
 define global theme which will be used across all components in design system
 use ant design theming capabilities to define colors, typography, spacing etc.
-theme colors we are following are: f4e5de-ffffff-d6d7da-761217-e77955
+The core theme colors:
+#f4e5de (background/secondary)
+#ffffff (surface)
+#d6d7da (border, textSecondary, divider)
+#cc3f47 (primary, error, link)
+#f7a88e (accent, warning, hover)
+
+only use lucid react packages for all icons

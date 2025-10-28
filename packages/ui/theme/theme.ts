@@ -1,31 +1,59 @@
 // Theme configuration for the design system
 // You can expand this with more tokens as needed
+
+// Named color exports for direct import
+export const colorPrimary = "#cc3f47";
+export const colorPrimaryHover = "#E77955";
+export const colorPrimaryActive = "#cc3f47";
+export const colorPrimaryTextHover = "#cc3f47";
+export const colorPrimaryText = "#cc3f47";
+export const colorPrimaryTextActive = "#cc3f47";
+export const colorSecondary = "#f4e5de";
+export const colorAccent = "#E77955";
+export const colorBackground = "#f4e5de";
+export const colorSurface = "#ffffff";
+export const colorError = "#cc3f47";
+export const colorErrorHover = "#E77955";
+export const colorErrorActive = "#cc3f47";
+export const colorWarning = "#E77955";
+export const colorInfo = "#cc3f47";
+export const colorSuccess = "#52c41a";
+export const colorText = "#1d2129";
+export const colorTextSecondary = "#d6d7da";
+export const colorTextTertiary = "#d6d7da";
+export const colorBorder = "#d6d7da";
+export const colorBorderSecondary = "#f4e5de";
+export const colorDivider = "#d6d7da";
+export const colorLink = "#cc3f47";
+export const colorLinkHover = "#E77955";
+export const colorLinkActive = "#cc3f47";
+
 export const colors = {
-  primary: "#cc3f47", // main brand red
-  primaryHover: "#E77955", // lighter accent
-  primaryActive: "#cc3f47", // same as primary for now
-  primaryTextHover: "#cc3f47",
-  primaryText: "#cc3f47",
-  primaryTextActive: "#cc3f47",
-  secondary: "#f4e5de", // soft background
-  accent: "#E77955", // accent
-  background: "#f4e5de", // main background
-  surface: "#ffffff", // surface
-  error: "#cc3f47", // use brand red for error
-  errorHover: "#E77955",
-  errorActive: "#cc3f47",
-  warning: "#E77955", // use accent for warning
-  info: "#cc3f47",
-  success: "#52c41a",
-  text: "#1d2129",
-  textSecondary: "#d6d7da",
-  textTertiary: "#d6d7da",
-  border: "#d6d7da",
-  borderSecondary: "#f4e5de",
-  divider: "#d6d7da",
-  link: "#cc3f47",
-  linkHover: "#E77955",
-  linkActive: "#cc3f47",
+  primary: colorPrimary,
+  primaryHover: colorPrimaryHover,
+  primaryActive: colorPrimaryActive,
+  primaryTextHover: colorPrimaryTextHover,
+  primaryText: colorPrimaryText,
+  primaryTextActive: colorPrimaryTextActive,
+  secondary: colorSecondary,
+  accent: colorAccent,
+  background: colorBackground,
+  surface: colorSurface,
+  error: colorError,
+  errorHover: colorErrorHover,
+  errorActive: colorErrorActive,
+  warning: colorWarning,
+  info: colorInfo,
+  success: colorSuccess,
+  text: colorText,
+  textSecondary: colorTextSecondary,
+  textTertiary: colorTextTertiary,
+  border: colorBorder,
+  borderSecondary: colorBorderSecondary,
+  divider: colorDivider,
+  link: colorLink,
+  linkHover: colorLinkHover,
+  linkActive: colorLinkActive,
 };
 
 export const typography = {

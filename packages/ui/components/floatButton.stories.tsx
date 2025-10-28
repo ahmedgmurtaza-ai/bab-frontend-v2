@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { FloatButton } from "./floatButton";
-import { PlusOutlined } from "@ant-design/icons";
+import { PlusIcon } from "lucide-react";
 
 const meta = {
   title: "Components/FloatButton",
@@ -22,7 +22,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     label: "Add",
-    icon: <PlusOutlined />,
+    icon: <PlusIcon />,
     onClick: () => alert("Clicked!"),
   },
 };
